@@ -1,0 +1,159 @@
+:root {
+  --bg: #0e1116;
+  --panel: #161b22;
+  --border: #2a313c;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #2f81f7;
+  --due: #f85149;
+  --ok: #3fb950;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.err {
+  color: var(--due);
+  font-size: 0.875rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 0.5rem 0.625rem;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+button {
+  background: var(--accent);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: white;
+  padding: 0.5rem 0.875rem;
+  cursor: pointer;
+}
+
+button.ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.625rem;
+}
+
+.add-form .full {
+  grid-column: 1 / -1;
+}
+
+ul.equipment {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+li.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+
+.row .info strong {
+  display: block;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.badge.due {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--due);
+}
+
+.badge.ok {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--ok);
+}
+
+.row .actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 320px;
+}
+
+.login-form .buttons {
+  display: flex;
+  gap: 0.5rem;
+}
