@@ -3,7 +3,7 @@
 // and writes the auth session through Next.js cookies, which is what keeps the
 // user logged in across requests. This is where MESync's "business logic is
 // server-side" principle lives: real mutations happen here, not in the browser.
-import { createServerClient } from "@supabase/ssr";
+import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
 export async function createClient() {
@@ -17,7 +17,7 @@ export async function createClient() {
         getAll() {
           return cookieStore.getAll();
         },
-        setAll(cookiesToSet) {
+        setAll(cookiesToSet: { name: string; value: string; options?: CookieOptions }[]) {
           // Called from a Server Component? Setting cookies there throws — and
           // that's fine, the middleware refreshes the session instead.
           try {
